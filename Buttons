@@ -1,0 +1,13 @@
+from tkinter import * 
+
+root =Tk()
+
+def myClick():
+    myLabel = Label(root, text="You clicked the button!!")
+    myLabel.pack()
+
+# watermelon colors, prolly should ignore the hex codes
+myButton = Button(root, text = "Don't click this button", command = myClick, bg = "#b4da55", fg = "#f42069")
+myButton.pack()
+
+root.mainloop()
