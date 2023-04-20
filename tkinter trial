@@ -2,8 +2,8 @@ from tkinter import *
 
 root = Tk()
 
- # Creating a label widget 
- myLabel = Label(root, text="Hello World")
+# Creating a label widget 
+myLabel = Label(root, text="Hello World")
 
 #  Filling it on the screen
 myLabel.pack()
