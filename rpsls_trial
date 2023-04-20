@@ -1,0 +1,137 @@
+import random
+
+# rock paper scissor lizard spock trial 
+
+user_wins = 0 
+computer_wins = 0 
+
+options = ["rock", "paper", "scissors", "lizard", "spock"]
+
+while True: 
+    user_input = input("Type Rock/Paper/Scissors/Lizard/Spock or Q to quit: ").lower()
+    if user_input == "q":
+        break
+
+    if user_input not in options:
+        continue 
+
+    random_number = random.randint(0, 4)
+    # rock = 0, paper = 1, scissors = 2
+    #lizard = 3, spock = 4
+    computer_pick = options[random_number]
+    print("Computer picked", computer_pick + ".")
+
+    if user_input == "rock" and computer_pick == "scissors":
+        print("Rock crushes scissors, you win!")
+        user_wins += 1
+        continue
+
+    if user_input == "rock" and computer_pick == "lizard":
+        print("Rock crushes lizard, you win!")
+        user_wins += 1
+        continue
+
+    if user_input == "scissors" and computer_pick == "paper":
+        print("Scissors cuts paper, you win!")
+        user_wins += 1
+        continue
+
+    if user_input == "scissors" and computer_pick == "lizard":
+        print("Scissors decapitates lizard, you win!")
+        user_wins += 1
+        continue
+
+    if user_input == "paper" and computer_pick == "rock":
+        print("Paper covers rock, you win!")
+        user_wins += 1
+        continue
+
+    if user_input == "paper" and computer_pick == "Spock":
+        print("Paper disproves Spock, you win!")
+        user_wins += 1
+        continue
+
+    if user_input == "lizard" and computer_pick == "paper":
+        print("Lizard eats paper, you win!")
+        user_wins += 1
+        continue
+
+    if user_input == "lizard" and computer_pick == "spock":
+        print("Lizard poisons Spock, you win!")
+        user_wins += 1
+        continue
+
+    if user_input == "spock" and computer_pick == "scissors":
+        print("Spock smashes scissors, you win!")
+        user_wins += 1
+        continue
+
+    if user_input == "spock" and computer_pick == "rock":
+        print("Spock vaporizes rock, you win!")
+        user_wins += 1
+        continue
+
+
+# computer wins 
+    if computer_pick == "rock" and user_input == "scissors":
+        print("Rock crushes scissors, you lost!")
+        computer_wins += 1
+        continue
+
+    if computer_pick == "rock" and user_input == "lizard":
+        print("Rock crushes lizard, you lost!")
+        computer_wins += 1
+        continue
+
+    if computer_pick == "scissors" and user_input == "paper":
+        print("Scissors cuts paper, you lost!")
+        computer_wins += 1
+        continue
+
+    if computer_pick == "scissors" and user_input == "lizard":
+        print("Scissors decapitates lizard, you lost!")
+        computer_wins += 1
+        continue
+
+    if computer_pick == "paper" and user_input == "rock":
+        print("Paper covers rock, you lost!")
+        computer_wins += 1
+        continue
+
+    if computer_pick == "paper" and user_input == "spock":
+        print("Paper disproves Spock, you lost!")
+        computer_wins += 1
+        continue
+
+    if computer_pick == "lizard" and user_input == "paper":
+        print("Lizard eats paper, you lost!")
+        computer_wins += 1
+        continue
+
+    if computer_pick == "lizard" and user_input == "spock":
+        print("Lizard poisons Spock, you lost!")
+        computer_wins += 1
+        continue
+
+    if computer_pick == "spock" and user_input == "scissors":
+        print("Spock smashes scissors, you lost!")
+        computer_wins += 1
+        continue
+
+    if computer_pick == "spock" and user_input == "rock":
+        print("Spock vaporizes rock, you lost!")
+        computer_wins += 1
+        continue
+
+    if user_input == computer_pick:
+        print("It's a draw!")
+
+    else:
+        print("You lost!")
+        computer_wins += 1
+
+    
+
+print("You won", user_wins, "times.")
+print("Computer won", computer_wins, "times.")
+print("Goodbye!")
