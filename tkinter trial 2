@@ -1,16 +1,20 @@
 from tkinter import *
+from PIL import Image,ImageTk
+
 
 root = Tk()
+root.title("Trial Window")
+root.iconbitmap('E:/Joshua/boy.ico')
 
-# Creating a label widget 
-myLabel1 = Label(root, text="Hello World")
-myLabel2 = Label(root, text="My name is Joshua")
-myLabel3 = Label(root, text="I'm learning tkinter")
 
-# Placing it on a grid
-myLabel1.grid(row=0, column=0)
-myLabel2.grid(row=3, column=0)
-myLabel3.grid(row=5, column=0)
+my_img = ImageTk.PhotoImage(Image.open("E:/Joshua/Personal/icons n stuff/totoro.jpg"))
+my_Label = Label(image=my_img)
+
+my_Label.pack()
+
+
+button_quit = Button(root, text="Exit Program", command=root.quit)
+button_quit.pack()
 
 
 root.mainloop()
