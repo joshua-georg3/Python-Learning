@@ -4,21 +4,23 @@ from PIL import Image,ImageTk
 # trials for image viewer
 
 root = Tk()
-root.title("Trial Window")
+root.title("Image Viewer")
 root.iconbitmap('E:\Joshua/Personal/Joshua Pics/python image viewer photographs/literally-just-me.ico')
 
 # the images
 
 my_img1 = ImageTk.PhotoImage(Image.open("E:\Joshua/Personal/icons n stuff/Drawings/boy.png"))
-my_img2 = ImageTk.PhotoImage(Image.open("E:\Joshua/Personal/icons n stuff/Drawings/afterglow.png"))
+my_img2 = ImageTk.PhotoImage(Image.open("E:\Joshua/Personal/icons n stuff/Drawings/surp.png"))
 my_img3 = ImageTk.PhotoImage(Image.open("E:\Joshua/Personal/icons n stuff/Drawings/heart.png"))
 my_img4 = ImageTk.PhotoImage(Image.open("E:\Joshua/Personal/icons n stuff/Drawings/smile.png"))
-my_img5 = ImageTk.PhotoImage(Image.open("E:\Joshua/Personal/icons n stuff/Drawings/afteglow.png"))
+my_img5 = ImageTk.PhotoImage(Image.open("E:\Joshua/Personal/icons n stuff/Drawings/sob.png"))
 
 # variable, image list
 
 image_list = [my_img1, my_img2, my_img3, my_img4, my_img5]
 
+# status bar
+status = Label(root, text="Image 1 of" + str(len(image_list)), bd=1, relief=SUNKEN)
 
 # label 1
 my_Label = Label(image=my_img1)
@@ -44,7 +46,8 @@ def forward(image_number):
     button_forward.grid(row=1, column=2)
     button_back.grid(row=1, column=0)
 
-    
+    status = Label(root, text="Image "+ str(image_number) +" of" + str(len(image_list)), bd=1, relief=SUNKEN)
+    status.grid(row=2, column=0, columnspan=3, sticky=W+E)
 
 
 def back(image_number):
@@ -64,6 +67,9 @@ def back(image_number):
     button_forward.grid(row=1, column=2)
     button_back.grid(row=1, column=0)
 
+    status = Label(root, text="Image "+ str(image_number) +" of" + str(len(image_list)), bd=1, relief=SUNKEN)
+    status.grid(row=2, column=0, columnspan=3, sticky=W+E)
+
 
 
 # buttons
@@ -75,8 +81,8 @@ button_forward = Button(root, text=">>",command=lambda: forward(2))
 
 button_back.grid(row=1, column=0)
 button_exit.grid(row=1, column=1)
-button_forward.grid(row=1, column=2)
-
+button_forward.grid(row=1, column=2, pady=10)
+status.grid(row=2, column=0, columnspan=3, sticky=W+E)
 
 # fin
 
